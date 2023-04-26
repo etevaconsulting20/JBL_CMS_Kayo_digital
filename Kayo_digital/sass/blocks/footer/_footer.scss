@@ -1,0 +1,56 @@
+.b-footer {
+
+	p {
+		margin-bottom: 10px;
+	}
+
+	a {
+		color: $header;
+	}
+
+	i {
+		margin-right: 5px;
+	}
+
+	&__column {
+		&--half {
+			margin: 20px 0;
+			@include media-breakpoint-up(lg) {
+				margin: 0px;
+			}
+		}
+	}
+
+	&__company-block {
+		@include media-breakpoint-up(lg) {
+			padding-right: 100px;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 20px;
+		width: 95px;
+	}
+
+	&__heading {
+		margin-bottom: 15px;
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 20px;
+		}		
+	}
+	
+	&__text {
+		font-size :12px;
+		font-weight: 500;
+		line-height: 18px;
+	}
+
+	&__contact {
+		font-size: 14px!important;
+	}
+
+	&__column-link {
+		display: block;
+		margin-bottom: 15px;
+	}
+}

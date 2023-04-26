@@ -1,0 +1,153 @@
+.l-section {
+	position: relative;
+	padding-top: $section-spacing-mobile;
+	@include media-breakpoint-up(lg) {
+		padding-top: $section-spacing;
+	}
+
+	&--pull-top-large {
+		@include media-breakpoint-up(lg) {
+			padding-top: 0!important;
+			margin-top: -233px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&--pull-top-large-2 {
+		@include media-breakpoint-up(lg) {
+			padding-top: 0!important;
+			margin-top: -165px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&--pull-top-md {
+		@include media-breakpoint-up(lg) {
+			padding-top: 0!important;
+			margin-top: -105px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&--pull-top-small {
+		@include media-breakpoint-up(lg) {
+			padding-top: 0!important;
+			margin-top: -44px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&--no-padding {
+		padding-top: 0!important;
+	}
+
+
+	&--no-padding-mobile {
+		padding-top: 0!important;
+		@include media-breakpoint-up(lg) {
+			padding-top: $section-spacing!important;
+		}
+	}
+
+	&--large-padding-top {
+		@include media-breakpoint-up(lg) {
+			padding-top: 120px!important;
+		}
+	}
+
+	&--padding-bot {
+		padding-bottom: $section-spacing-mobile;
+		@include media-breakpoint-up(lg) {
+			padding-bottom: $section-spacing;
+		}		
+	}
+
+	&--large-padding-bottom {
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 270px!important;
+		}
+	}
+
+	&--large-padding-bottom-2 {
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 200px!important;
+		}
+	}
+
+	&--white {
+		background: $white;
+	}
+
+	&--grey-light {
+		background: $grey-light;
+	}
+
+	&--primary {
+		background: $primary;
+	} 
+
+	&--primary-gradient {
+		background: $primary-gradient;
+	} 
+
+	&--primary-gradient-mobile {
+		@include media-breakpoint-down(lg) {
+			background: $primary-gradient;
+		}
+	} 
+
+	&--primary-mobile {
+		@include media-breakpoint-down(lg) {
+			background: $primary;
+		}
+	} 
+
+	&--green-background-logo {
+		&:after {
+			@include media-breakpoint-up(lg) {
+				content: "";
+				position: absolute;
+				background-size: 100%!important;
+				background-repeat: no-repeat!important;
+				background-position: center;
+				background: url('assets/backgrounds/green-background.png');
+				top: 80px;
+			    left: 50%;
+			    transform: translate(-50%, 0);
+				z-index: -1;
+				width: 50%;
+				height: calc(100% - 80px); 
+			}
+		}
+	}
+
+	&--green-background-logo-high {
+		&:after {
+			@include media-breakpoint-up(lg) {
+				top: 25px;
+			}
+		}
+	}
+
+	&--green-background-logo-large {
+		&:after {
+			@include media-breakpoint-up(md) {
+				content: "";
+				position: absolute;
+				background-size: contain!important;
+				background-repeat: no-repeat!important;
+				background-position: bottom right;
+				background: url('assets/backgrounds/green-background-large.png');
+			    bottom: -470px;
+			    right: -20px;
+			    z-index: -1;
+			    width: 600px;
+			    height: 700px;
+			}
+		}
+	}
+}

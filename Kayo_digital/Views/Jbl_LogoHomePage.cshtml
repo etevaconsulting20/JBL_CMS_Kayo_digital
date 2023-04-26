@@ -1,0 +1,18 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Jbl_LogoHomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Jbl_Master.cshtml";
+}
+   <div>
+        <h2>One</h2>
+        @await Html.PartialAsync("Main/SectionOne")
+    </div>
+    <div>
+        <h2>Second</h2>
+        @await Html.PartialAsync("Main/SectionSecond")
+    </div>
+    <div>
+        <h2>Three</h2>
+        @await Html.PartialAsync("Main/SectionThree")
+    </div>

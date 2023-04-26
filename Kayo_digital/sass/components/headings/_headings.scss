@@ -1,0 +1,117 @@
+.c-heading {
+	font-weight: 700;
+	color: $header; 
+ 
+	&--lg {
+		font-size: 28px;
+		line-height: 33px;	
+			
+		@include media-breakpoint-up(lg) {
+			font-size: 50px;
+			line-height: 60px;
+		}
+	}
+
+	&--lg-2 {
+		font-size: 24px;
+		line-height: 39px;	
+			
+		@include media-breakpoint-up(lg) {
+			font-size: 38px;
+			line-height: 46px;
+		}
+	}
+
+	&--page-heading {
+		font-size: 28px;
+		line-height: 33px;	
+			
+		@include media-breakpoint-up(lg) {
+			font-size: 38px;
+			line-height: 46px;
+		}
+	}
+
+	&--md {
+		font-size: 24px;
+		line-height: 29px;	
+			
+		@include media-breakpoint-up(lg) {
+			font-size: 32px;
+			line-height: 38px;
+		}
+	}
+
+	&--md-2 {
+		font-size: 18px;
+		line-height: 21px;	
+			
+		@include media-breakpoint-up(lg) {
+			font-size: 28px;
+			line-height: 34px;
+		}
+	}
+
+	&--project {
+		font-size: 24px;
+		line-height: 29px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 28px;
+			line-height: 33px;
+		}		
+	}
+
+	&--sm {
+		font-size: 18px;
+		line-height: 21px; 
+
+		@include media-breakpoint-up(lg) {
+			font-size: 26px;
+			line-height: 31px;
+		}		
+	}
+
+	&--sm-2 {
+		font-size: 18px;
+		line-height: 21px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 24px;
+			line-height: 29px;
+		}			
+	}
+
+	&--xs {
+		font-size: 18px;
+		line-height: 21px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+			line-height: 24px;
+		}
+	}
+
+	&--xs-2 {
+		font-size: 14px;
+		line-height: 21px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+
+	&--primary {
+		color: $primary-light;
+	}
+
+	&--white {
+		color: $white;
+	}
+	&--white-desktop {
+		@include media-breakpoint-up(lg) {
+			color: $white;
+		}
+	}
+}

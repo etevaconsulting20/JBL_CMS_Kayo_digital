@@ -1,0 +1,43 @@
+.b-services-block {
+	position: relative;
+
+	&--top-positioned {
+		@include media-breakpoint-up(lg) {
+			margin-top: -232px;
+			z-index: 2;
+			position: relative;
+			padding-top: 0!important;
+		}
+	}
+
+	.row > div {
+		margin-bottom: 10px;
+	}
+
+	&__content-container {
+
+		&--logo {
+			@include media-breakpoint-up(lg) {
+				&:after {
+					content:"";
+					position: absolute;
+					top: -75px;
+					right: 20px;
+					background-image: url('assets/icons/protect-badge.png');
+					background-size: cover;
+					background-repeat: no-repeat;
+					width: 175px;
+					height: 175px;
+				}
+			}
+		}
+	}
+
+	&__heading-container {
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}
+	}
+}

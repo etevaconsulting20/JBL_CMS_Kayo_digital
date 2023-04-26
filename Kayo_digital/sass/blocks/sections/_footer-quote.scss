@@ -1,0 +1,18 @@
+.b-footer-quote {
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 0;
+
+		@include media-breakpoint-up(lg) {
+			max-width: 620px;
+			margin: 0px auto;
+		}
+
+		.c-heading, p {
+			margin: 0;
+		}
+	}
+}

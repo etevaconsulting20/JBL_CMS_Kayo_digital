@@ -1,0 +1,38 @@
+.c-details-card {
+	background: $white;
+	padding: 34px 29px;
+	box-shadow: $shadow;
+	border-radius: 0 0 $border-radius $border-radius; 
+	margin-bottom: 20px;
+
+	&__content {
+
+	}
+
+	&__service {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__heading,
+	&__detail {
+		margin-bottom: 10px;
+	}
+
+	&__heading {
+		padding-right: 10px;
+	}
+
+	&__list {
+		list-style: disc;
+
+		li {
+			margin-left: 25px;
+			margin-bottom: 10px;
+		}
+	}
+
+	a {
+		color: $text;
+	}
+}

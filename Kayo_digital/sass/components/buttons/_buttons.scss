@@ -1,0 +1,78 @@
+.c-button {
+	font-weight: 700;
+	border-radius: $border-radius;
+	padding: 10px 16px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	display: inline-block;
+
+	i {
+		padding-left: 10px;
+	}
+
+	&--primary {
+		background: $primary-gradient;
+		color: $white;
+		&:hover {
+
+		}
+
+		i {
+			color: $white;
+		}
+	}
+
+	&--outline-primary {
+		background: transparent;
+		color: $primary;
+		border: 2px solid $primary;
+
+		i {
+			color: $primary;
+		}
+	}
+
+	&--white {
+		background: $white;
+		color: $text; 
+		border: 2px solid $border;
+		&:hover {
+			
+		}
+
+		i {
+			color: $text; 
+		}
+	}
+
+	&--dark {
+		background: $header;
+		color: $white; 
+		&:hover {
+			
+		}
+
+		i {
+			color: $white; 
+		}
+	}
+
+	&--facebook {
+		background: $facebook;
+		color: $white;
+	}
+
+	&--twitter {
+		background: $twitter;
+		color: $white;
+	}
+
+	&--text-large {
+		font-size: 18px
+	}
+
+	&--text-medium {
+		font-size: 16px;
+	}
+}

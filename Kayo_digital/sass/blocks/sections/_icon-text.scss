@@ -1,0 +1,16 @@
+.b-icon-text-block {
+	position: relative;
+
+	&--top-positioned {
+		@include media-breakpoint-up(md) {
+			margin-top: -44px;
+			z-index: 2;
+			position: relative;
+			padding-top: 0!important;
+		}
+	}
+
+	.row > div {
+		margin-bottom: 10px;
+	}
+}

@@ -1,0 +1,33 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Jbl_HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Jbl_Master_Main.cshtml";
+}
+
+<div>
+    @Model.Value("productList")
+</div>
+
+
+
+<div>
+        <h2>One</h2>
+     @await Html.PartialAsync("Main/Home_Hero")
+    </div>
+    <div>
+        <h2>Second</h2>
+        @await Html.PartialAsync("Main/SectionSecond")
+    </div>
+    <div calss="container">
+        <div class="d-flex justify-content-center ">
+         <div class="col-5 ">
+            @Model.Value("pageCotent")
+         </div>
+        </div>
+    </div>
+    
+    <div>
+        <h2>Three</h2>
+        @await Html.PartialAsync("Main/SectionThree")
+    </div>

@@ -1,0 +1,73 @@
+.c-intro-card {
+	box-shadow: $shadow;
+	margin-bottom: 20px;
+	display:flex;
+	flex-direction: column;
+
+	@include media-breakpoint-up(lg) {
+		&--offset-top {
+			position: relative;
+			top: 40px;
+		}
+	}
+	
+	&__image-wrapper {
+		position: relative;
+		padding-bottom: 66%; 
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: $border-radius $border-radius 0 0; 
+
+		@include media-breakpoint-up(lg) {
+			height: 220px;
+			padding-bottom: 0;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	&__label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $primary;
+		font-size: 14px;
+		font-weight: 700;
+		color: $white;
+		padding: 3px;
+		border-top-left-radius: $border-radius;
+	}
+
+	&__content-wrapper {
+		padding: 26px 29px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		flex: 1;
+		background: $white; 
+		border-radius: 0px 0px $border-radius $border-radius;
+		
+		@include media-breakpoint-up(lg) {
+			min-height: 250px;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			font-weight: 700;
+		}
+
+		a,i {
+			font-size: 16px;
+			text-decoration: none;
+		}
+
+		i {
+			margin-left: 5px;
+			margin-top: 1px;
+		}
+	}
+}

@@ -1,0 +1,50 @@
+.b-latest-news {
+	position: relative;
+	
+	.row > div {
+		margin-bottom: 20px;
+	}
+
+	&__content-container {
+
+	}
+
+	&__heading-container {
+		display: flex;
+		justify-content: space-between;
+
+		.c-button {
+			@include media-breakpoint-down(lg) {
+				display: none!important;
+			}
+		}
+	} 
+
+	.c-button {
+		display: flex;
+		height: 39px;
+	}
+
+	&__load-more {
+		display: flex;
+		justify-content: center;
+		padding-top: $section-spacing-mobile;
+		padding-bottom: $section-spacing-mobile;
+
+		@include media-breakpoint-up(lg) {
+			padding-top: $section-spacing 0;
+			padding-bottom: $section-spacing 0;
+		}
+	}
+
+	&__more-news {
+		display: flex;
+		justify-content: flex-start;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+}

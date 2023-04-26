@@ -1,0 +1,9 @@
+.b-team {
+
+	.col-6 {
+		margin-bottom: 10px;
+	    @include media-breakpoint-up(lg) {
+	    	margin-bottom: 20px;
+	    }
+	}
+}

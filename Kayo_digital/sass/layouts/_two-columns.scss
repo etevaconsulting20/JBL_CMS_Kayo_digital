@@ -1,0 +1,112 @@
+.l-two-column {
+	position: relative;
+	padding-top: $section-spacing-mobile;
+
+	@include media-breakpoint-up(lg) {
+		padding-top: $section-spacing;
+	}
+
+	&--no-padding-desktop {
+		@include media-breakpoint-up(lg) {
+			padding-top: 0!important;
+		}
+	}
+
+	&--padding-bot {
+		padding-bottom: $section-spacing-mobile;
+		@include media-breakpoint-up(lg) {
+			padding-bottom: $section-spacing;
+		}		
+	}
+
+
+	&--grey-background-logo {
+		&:after {
+			@include media-breakpoint-up(lg) {
+				content: "";
+				position: absolute;
+				background-size: cover!important;
+				background-repeat: no-repeat!important;
+				background-position: center;
+				background: url('assets/backgrounds/grey-background-large.png');
+				top: 0px;
+			    right: 0;
+				z-index: -1;
+				width: 650px;
+				height: 700px; 
+			}
+		}
+	}
+
+	&--grey-background-logo-pull-up {
+		&:after {
+			@include media-breakpoint-up(lg) {
+				top: -200px;
+			}
+		}
+	}
+
+	&--reverse {
+		> .container {
+			.row {
+				@include media-breakpoint-down(lg) {
+					display: flex;
+
+					> div {
+						&:first-of-type {
+							order: 2;
+						}
+						&:second-of-type {
+							order: 1; 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__content-wrapper {
+		@include media-breakpoint-up(lg) {
+			padding-right: 60px;
+		}
+	}
+
+	&__quote-wrapper {
+		position: relative;
+		margin-bottom: 80px;
+		position: relative;
+
+		&:before {	
+			@include media-breakpoint-down(lg) {
+				content: "";
+				position: absolute;
+				background: $white;
+				left: 0;
+				top: -40px;
+				height: calc(100% + 80px);
+			    margin-left: calc(50% - 50vw);
+		    	margin-right: calc(50% - 50vw);
+				width: 100vw;
+				z-index: -1
+			}
+		}
+
+		&--background-logo {
+			@include media-breakpoint-up(lg) {
+
+				&:after {
+					content:"";
+					position: absolute;
+					top: -50px;
+					right: -30px;
+					background-image: url('assets/backgrounds/form-background.png');
+					background-size: cover;
+					background-repeat: no-repeat;
+					width: 155px;
+					height: 155px;
+					z-index: 0;
+				}
+			}
+		}
+	}
+}

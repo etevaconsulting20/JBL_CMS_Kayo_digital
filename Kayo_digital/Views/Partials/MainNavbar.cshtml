@@ -1,0 +1,221 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+This is the home page for a standard website.
+It also highlights the current active page/section in the navigation with the CSS class "current".
+*@
+
+
+@{ var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); }
+
+@if (selection?.Length > 0)
+{
+<div class="b-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="b-header__content">
+					<a href="/">
+						<img class="b-header__logo" src="assets/logos/jbl-logo.svg" alt="" />
+					</a>
+					<nav class="navbar navbar-expand navbar-light">
+						<ul class="navbar-nav">
+						    
+							<!-- new foreach-->
+							<!--Start Foreach loop-->
+							
+							@foreach (var item in selection)
+                            {
+                                 if (item.Children().Count() == 0) 
+                                 {
+                                  <ul class="c-navbar__dropdown-menu dropdown-menu @(item.IsAncestorOrSelf(Model) ? "current" : null)">
+                                     <a  href="@item.Url(PublishedUrlProvider)" class="navlink w-nav-link">@item.Name</a>
+                                   </ul>
+                                 }
+                                 else if (item.Children().Count() >= 1)
+                                 {
+                                     <div data-hover="1" data-delay="0" class="w-dropdown">
+                                        <div class="navlink w-dropdown-toggle  ">
+                                      
+                                            <li class="c-navbar__link-item nav-item dropdown">
+												<a class="c-navbar__link nav-link " href="#"
+													role="button" data-bs-toggle="dropdown" aria-expanded="false">
+													<div>@item.Name</div><i class="fa-solid fa-chevron-down"></i>
+												</a>
+												<ul class="c-navbar__dropdown-menu dropdown-menu">
+													
+											        @foreach (var child in item.Children().Where(c => c.IsVisible())) 
+                                                      { 
+                                                        <nav class="w-dropdown-list">  
+                                                          <a href="@child.Url(PublishedUrlProvider)" class="c-navbar__dropdown-item dropdown-item">@child.Name</a>
+                                                        </nav>
+                                                      }
+												</ul>
+											</li>
+                                         </div>
+                                    </div>
+                                }
+                            }
+                             <!--End Foreach loop-->
+							 <div class="c-navbar__right">
+								<li class="c-navbar__link-item nav-item">
+									<a class="c-navbar__link nav-link " aria-current="page" href="/case-studys/"> Case Studies</a>
+								</li>
+								<li class="c-navbar__link-item nav-item">
+									<a class="c-navbar__link nav-link" href="/news/">News</a>
+								</li>
+								<li class="c-navbar__link-item nav-item">
+									<a class="c-navbar__link nav-link" href="/contact/"> Contact</a>
+								</li>
+								<li class="c-navbar__link-item nav-item d-none d-lg-block">
+									<a href="/contact/" class="c-button c-button--primary c-button--text-large btn">
+										Get a quote
+									</a>
+								</li>
+							  </div>
+							
+							 <!--All Mobail-->
+
+							 <div class="c-navbar__mobile-footer-content d-lg-none text-center">
+								<p class="c-heading c-heading--white c-heading--project">Get a free quote today</p>
+								<p class="c-text c-text--white c-text--xs">A no obligation quote for your requirements
+								</p>
+								<a href="" class="c-button c-button--dark c-button--text-large btn">
+									Get started <i class="fa-solid fa-arrow-right-long"></i>
+								</a>
+							 </div>
+							<!--}-->
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+}
+
+
+
+
+ <!--Refrence code on css-->
+
+
+<!--<div class="b-header">-->
+<!--			<div class="container">-->
+<!--				<div class="row">-->
+<!--					<div class="col-12">-->
+<!--						<div class="b-header__content">-->
+<!--							<a href="/">-->
+<!--								<img class="b-header__logo" src="assets/logos/jbl-logo.svg" alt="" />-->
+<!--							</a>-->
+<!--							<nav class="c-navbar navbar navbar-expand-lg">-->
+<!--								<button class="c-navbar__toggle navbar-toggler" type="button" data-bs-toggle="collapse"-->
+<!--									data-bs-target="#header-nav" aria-controls="header-nav" aria-expanded="false"-->
+<!--									aria-label="Toggle navigation">-->
+<!--									<span class="navbar-toggler-icon"></span>-->
+<!--								</button>-->
+<!--								<div class="c-navbar__content-wrapper collapse navbar-collapse" id="header-nav">-->
+<!--									<ul class="c-navbar__link-wrapper navbar-nav me-auto mb-2 mb-lg-0">-->
+
+<!--										<div class="c-navbar__mobile-header-content d-lg-none">-->
+<!--											<div class="c-navbar__mobile-header-content-left">-->
+<!--												<p class="c-text c-text--primary c-text--bold">01795 427 060</p>-->
+<!--											</div>-->
+<!--											<div class="c-navbar__mobile-header-content-right">-->
+<!--												<a href="">-->
+<!--													<i class="fa-brands fa-facebook"></i>-->
+<!--												</a>-->
+<!--												<a href="">-->
+<!--													<i class="fa-brands fa-twitter"></i>-->
+<!--												</a>-->
+<!--												<button type="button" class="c-navbar__toggle btn-close"-->
+<!--													aria-label="Close" data-bs-toggle="collapse"-->
+<!--													data-bs-target="#header-nav" aria-controls="header-nav"-->
+<!--													aria-expanded="true" aria-label="Toggle navigation"></button>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--										<div class="c-navbar__left">-->
+<!--											<li class="c-navbar__link-item nav-item d-lg-none">-->
+<!--												<a class="c-navbar__link nav-link" aria-current="page" href="#">Home-->
+<!--													link for mobile only</a>-->
+<!--											</li>-->
+<!--											<li class="c-navbar__link-item nav-item dropdown">-->
+<!--												<a class="c-navbar__link nav-link dropdown-toggle" href="#"-->
+<!--													role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--													Dropdown<i class="fa-solid fa-chevron-down"></i>-->
+<!--												</a>-->
+<!--												<ul class="c-navbar__dropdown-menu dropdown-menu">-->
+<!--													<li><a class="c-navbar__dropdown-item dropdown-item"-->
+<!--															href="#">Action</a></li>-->
+<!--													<li><a class="c-navbar__dropdown-item dropdown-item"-->
+<!--															href="#">Another action</a></li>-->
+<!--												</ul>-->
+<!--											</li>-->
+<!--											<li class="c-navbar__link-item nav-item dropdown">-->
+<!--												<a class="c-navbar__link nav-link dropdown-toggle" href="#"-->
+<!--													role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--													Dropdown<i class="fa-solid fa-chevron-down"></i>-->
+<!--												</a>-->
+<!--												<ul class="c-navbar__dropdown-menu dropdown-menu">-->
+<!--													<li><a class="c-navbar__dropdown-item dropdown-item"-->
+<!--															href="#">Action</a></li>-->
+<!--													<li><a class="c-navbar__dropdown-item dropdown-item"-->
+<!--															href="#">Another action</a></li>-->
+<!--												</ul>-->
+<!--											</li>-->
+<!--											<li class="c-navbar__link-item nav-item dropdown">-->
+<!--												<a class="c-navbar__link nav-link dropdown-toggle" href="#"-->
+<!--													role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--													Dropdown<i class="fa-solid fa-chevron-down"></i>-->
+<!--												</a>-->
+<!--												<ul class="c-navbar__dropdown-menu dropdown-menu">-->
+<!--													<li><a class="c-navbar__dropdown-item dropdown-item"-->
+<!--															href="#">Action</a></li>-->
+<!--													<li><a class="c-navbar__dropdown-item dropdown-item"-->
+<!--															href="#">Another action</a></li>-->
+<!--												</ul>-->
+<!--											</li>-->
+<!--										</div>-->
+<!--										<div class="c-navbar__right">-->
+<!--											<li class="c-navbar__link-item nav-item">-->
+<!--												<a class="c-navbar__link nav-link active" aria-current="page"-->
+<!--													href="#">Link</a>-->
+<!--											</li>-->
+<!--											<li class="c-navbar__link-item nav-item">-->
+<!--												<a class="c-navbar__link nav-link" href="#">Link</a>-->
+<!--											</li>-->
+<!--											<li class="c-navbar__link-item nav-item">-->
+<!--												<a class="c-navbar__link nav-link" href="#">Link</a>-->
+<!--											</li>-->
+<!--											<li class="c-navbar__link-item nav-item d-none d-lg-block">-->
+<!--												<a href="" class="c-button c-button--primary c-button--text-large btn">-->
+<!--													Get a quote-->
+<!--												</a>-->
+<!--											</li>-->
+<!--										</div>-->
+<!--										<div class="c-navbar__mobile-footer-content d-lg-none text-center">-->
+<!--											<p class="c-heading c-heading--white c-heading--project">Get a free quote-->
+<!--												today</p>-->
+<!--											<p class="c-text c-text--white c-text--xs">A no obligation quote for your-->
+<!--												requirements</p>-->
+<!--											<a href="" class="c-button c-button--dark c-button--text-large btn">-->
+<!--												Get started <i class="fa-solid fa-arrow-right-long"></i>-->
+<!--											</a>-->
+<!--										</div>-->
+<!--									</ul>-->
+<!--								</div>-->
+<!--							</nav>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->

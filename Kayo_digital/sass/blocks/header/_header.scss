@@ -1,0 +1,14 @@
+.b-header {
+	padding: 25px 0;
+	background: $white;
+	
+	&__content {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		margin-right: 20px;
+		height: 37px;
+	}
+}

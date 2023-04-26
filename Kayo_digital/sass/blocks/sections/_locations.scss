@@ -1,0 +1,49 @@
+.b-locations {
+	position: relative;
+
+	.row > div {
+		margin-bottom: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	&__content-container {
+
+	}
+
+	form {
+		margin-bottom: 20px;
+	}
+
+	&__heading-container {
+		display: flex;
+		flex-direction: column;
+
+		@include media-breakpoint-up(md) {
+			justify-content: space-between;
+			flex-direction: row;
+		}
+
+		.c-heading {
+			margin-bottom: 0;
+		}
+
+		&--reverse {
+			.c-heading {
+				order: 2;
+
+				@include media-breakpoint-up(md) {
+					order: unset;
+				}
+			}
+			form {
+				order: 1;
+
+				@include media-breakpoint-up(md) {
+					order: unset;
+				}
+			}
+		}
+	} 
+
+}

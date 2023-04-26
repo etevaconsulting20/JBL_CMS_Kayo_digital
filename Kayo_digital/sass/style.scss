@@ -1,0 +1,68 @@
+/*
+Theme Name: JBL
+Description: JBL
+Version: 1.0
+*/
+//bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+//utilities
+@import 'sass/utilities/variables';
+@import 'sass/utilities/utilities';
+
+//base
+@import 'sass/base/reset';
+@import 'sass/base/base';
+@import 'sass/base/typography';
+@import 'sass/base/forms';
+
+//blocks
+@import 'sass/blocks/header/pre-header';
+@import 'sass/blocks/header/header'; 
+@import 'sass/blocks/header/breadcrumbs'; 
+@import 'sass/blocks/banners/hero-banner';
+@import 'sass/blocks/banners/inner-hero-banner';
+@import 'sass/blocks/banners/project-banner';
+@import 'sass/blocks/banners/footer-banner';
+@import 'sass/blocks/sections/services';
+@import 'sass/blocks/sections/intro';
+@import 'sass/blocks/sections/text-w-image';
+@import 'sass/blocks/sections/team';
+@import 'sass/blocks/sections/card-column';
+@import 'sass/blocks/sections/icon-text';
+@import 'sass/blocks/sections/full-icon-text';
+@import 'sass/blocks/sections/testimonials';
+@import 'sass/blocks/sections/text-area';
+@import 'sass/blocks/sections/latest-news';
+@import 'sass/blocks/sections/news-article';
+@import 'sass/blocks/sections/locations';
+@import 'sass/blocks/sections/gallery';
+@import 'sass/blocks/sections/positions'; 
+@import 'sass/blocks/sections/three-column-text';
+@import 'sass/blocks/sections/contact-form';
+@import 'sass/blocks/sections/footer-quote';
+@import 'sass/blocks/sections/footer-logos';
+@import 'sass/blocks/footer/footer';
+
+
+//layout
+@import 'sass/layouts/sections';
+@import 'sass/layouts/two-columns';
+
+//components
+@import 'sass/components/navigation/navbar'; 
+@import 'sass/components/buttons/buttons'; 
+@import 'sass/components/headings/headings'; 
+@import 'sass/components/text/text';  
+@import 'sass/components/form/search'; 
+@import 'sass/components/form/quote-form'; 
+@import 'sass/components/cards/services-card'; 
+@import 'sass/components/cards/intro-card'; 
+@import 'sass/components/cards/icon-text-card'; 
+@import 'sass/components/cards/latest-news-card'; 
+@import 'sass/components/cards/team-card'; 
+@import 'sass/components/cards/locations-card'; 
+@import 'sass/components/cards/details-card'; 
+@import 'sass/components/tabs/tabs';  
+
+ 

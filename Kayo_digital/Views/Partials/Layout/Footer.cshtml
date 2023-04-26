@@ -1,0 +1,143 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+
+
+
+<!--Image Section-->
+<section class="l-section b-footer-banner b-footer-banner--text-right"
+		 style="background-image:url(/assets/images/footer-banner-background.jpg)">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="b-footer-banner__content">
+					<h4 class="c-heading c-heading--lg-2 c-heading--white">@Model.Value("footerLock")</h4>
+					<div class="b-footer-banner__columns">
+						<div class="row">
+							<div class="col-12 col-lg-5">
+								<h5 class="c-heading c-heading--xs c-heading--white">@Model.Value("workingForJBL")</h5>
+								<p class="c-text c-text--xs c-text--white">
+									@Model.Value("workingForJBLDiscription")
+								</p>
+							</div>
+							<div class="col-12 col-lg-5">
+								<h5 class="c-heading c-heading--xs c-heading--white">@Model.Value("ourMissionTogether")</h5>
+								<p class="c-text c-text--xs c-text--white">
+									@Model.Value("ourMissionTogetherDiscription")
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="b-footer-banner__apply-wrapper">
+						<a href="" class="c-button c-button--outline-primary c-button--text-medium btn">
+							Apply today <i class="fa-solid fa-arrow-right-long"></i>
+						</a>
+						<p class="c-text c-text--xs c-text--white">
+							<i class="fa-solid fa-check"></i> @Model.Value("currently3OpenRoles")
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+@await Umbraco.RenderMacroAsync("GetAFreeQuoteToday")
+<!--FooterLogos-->
+<section class="l-section b-footer-logos l-section--no-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="b-footer-quote__content">
+					<!--<img src="assets/logos/footer-icon.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon-2.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon-2.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon.png" alt="" />-->
+				
+                    @{
+                      var mediaUrls = Model.Value<string[]>("myMediaPicker"); // Replace "myMediaPicker" with the alias of your media picker property
+                      if (mediaUrls != null && mediaUrls.Length > 0)
+                      {
+                         // Access the first media item URL in the array
+                        var mediaUrl = mediaUrls[0];
+                         // Use the media item URL in your template HTML
+                        <img src="@mediaUrl" alt="" />
+                      }
+                     }
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--Main Footer Section-->
+@Model.Value("FooterBody12")
+<footer class="l-section l-section--white l-section--padding-bot b-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-4">
+			    <!--JblLogo-->
+			    @await Umbraco.RenderMacroAsync("FooterJBLLogo", new {footerJblLogo="1056"})
+			</div>
+			<div class="col-12 col-lg-8">
+				<div class="b-footer__columns">
+					<div class="row">
+					
+					 <!--Contact-->
+                        <div class="b-footer__column col-12 col-lg-4">
+							<h5 class="b-footer__heading c-heading c-heading--xs-2 d-none d-lg-block"><a href="#">@Model.Value("contactTitle")</a></h5>
+							<p class="c-text c-text--small">
+						@Model.Value("contactAddress")
+							  
+							</p>
+							<p class="b-footer__contact c-text c-text--small">
+								<i class="fa-solid fa-phone"></i>
+						       @Model.Value("contactNo")
+							</p>
+							<p class="b-footer__contact c-text c-text--small">
+								<i class="fa-regular fa-envelope"></i>
+								<a href="mailto:info@jblandscape.co.uk">@Model.Value("contactEmail")</a>
+							</p>
+						</div>
+						<!--WebSite-->
+						<div class="b-footer__column b-footer__column--half col-6 col-lg-4">
+							<h5 class="b-footer__heading c-heading c-heading--xs-2"><a href="#">@Model.Value("webSiteTitle")</a></h5>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+						</div>
+						<!--Help-->
+                        <div class="b-footer__column b-footer__column--half col-6 col-lg-4">
+							<h5 class="b-footer__heading c-heading c-heading--xs-2">Help</h5>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-4 d-lg-none">
+				<div class="b-footer__company-block">
+					<p class="c-heading c-heading--xs-2">
+						JB Landscape - Grounds Maintenance & Landscaping
+						Specialists
+					</p>
+					<!--Duplicate of the above copywrite in the first column as it needs to move to the bottom of the page on mobile -->
+					<p class="b-footer__text c-text b-footer__text--last">
+						© Copyright 2022 J.B.Landscape and
+						Property Maintenance. All Rights Reserved.
+						
+					</p>
+					<!--Duplicate of the above copywrite in the first column as it needs to move to the bottom of the page on mobile -->
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+

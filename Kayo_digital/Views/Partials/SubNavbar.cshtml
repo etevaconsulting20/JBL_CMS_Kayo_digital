@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<div class="b-pre-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="b-pre-header__content">
+							<div class="b-pre-header__intro">
+								<p>@Model.Value("SubNavbarTitle", fallback: Fallback.ToAncestors)</p>
+								<a href="/join-us/">@Model.Value("subNavbarCTA", fallback: Fallback.ToAncestors)</a>
+							</div>
+							<div class="b-pre-header__contact-wrapper">
+								<div class="b-pre-header__contact-details">
+									<p>@Model.Value("subNavbarContactUs", fallback: Fallback.ToAncestors)<span>0 @Model.Value("subNavbarContactNo", fallback: Fallback.ToAncestors)</span></p>
+								</div>
+								<div class="b-pre-header__social-logos">
+									<a href="">
+										<i class="fa-brands fa-facebook"></i>
+									</a>
+									<a href="">
+										<i class="fa-brands fa-twitter"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

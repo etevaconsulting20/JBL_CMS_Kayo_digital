@@ -1,0 +1,44 @@
+.c-quote-form {
+	background: $white;
+	border-radius: $border-radius;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+
+	@include media-breakpoint-up(lg) {
+		padding: 34px 36px;
+		box-shadow: $shadow;
+		position: absolute;
+	}
+
+	&--header {
+		@include media-breakpoint-up(lg) {
+			max-width: 70%;
+			top: 60px;
+		}		
+	}
+
+	.c-heading {
+		font-size: 24px;
+		margin-bottom: 5px;
+	}
+
+	&__content-wrapper {
+		margin-top: 60px;
+
+		@include media-breakpoint-up(lg) {
+			display: block!important;
+			margin-top: 0px;
+		}
+	}
+
+	.c-button {
+		width: 100%;
+	}
+
+	p {
+		a {
+			text-decoration: underline;
+		}
+	}
+}

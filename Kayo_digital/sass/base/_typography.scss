@@ -1,0 +1,23 @@
+body {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-family: $base-font-family;
+    font-weight: 500;
+}
+
+a {
+    color: $primary;
+    text-decoration: none;
+    &:hover {
+        color: darken($primary, 10%);
+        transition: background-color 0.3s ease;
+    }
+}
+
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 20px;
+}
+
+i {
+    color: $primary;
+}

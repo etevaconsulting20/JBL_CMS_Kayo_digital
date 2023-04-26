@@ -1,0 +1,12 @@
+body {
+	background: $grey-background;
+	overflow-x: hidden;
+
+	&.navopen {
+		overflow: hidden;
+	}
+}
+
+img {
+	max-width: 100%;
+}

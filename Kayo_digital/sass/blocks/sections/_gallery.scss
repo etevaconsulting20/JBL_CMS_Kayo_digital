@@ -1,0 +1,13 @@
+.b-gallery {
+	&__image-wrapper {
+		margin: 12px 0;
+	}
+
+	&__image {
+
+		img {
+			border-radius: $border-radius; 
+			width: 100%;
+		}
+	}
+}
