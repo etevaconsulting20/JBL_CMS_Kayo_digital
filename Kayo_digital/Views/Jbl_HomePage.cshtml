@@ -5,22 +5,10 @@
 	Layout = "Jbl_Master_Main.cshtml";
 }
 
-    <div>
-     @await Html.PartialAsync("Main/Home_Hero")
-    </div>
-    <div>
-        <h2>Second</h2>
-        @await Html.PartialAsync("Main/SectionSecond")
-    </div>
-    <div calss="container">
-        <div class="d-flex justify-content-center ">
-         <div class="col-5 ">
-            @Model.Value("pageCotent")
-         </div>
-        </div>
-    </div>
     
-    <div>
-        <h2>Three</h2>
-        @await Html.PartialAsync("Main/SectionThree")
-    </div>
+     @await Html.PartialAsync("Main/Home_Hero")
+    
+      @await Html.PartialAsync("Main/Our Services")
+    
+      @await Html.PartialAsync("Main/About Company")
+    

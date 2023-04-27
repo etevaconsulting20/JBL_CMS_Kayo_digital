@@ -1,14 +1,12 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-
-
 <section class="l-section l-section--large-padding-top b-intro-block">
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<div class="b-intro-block__text-wrapper">
-					<h2 class="c-heading c-heading--md">JB Landscape has been in operation since 1987, growing steadily through word-of-mouth recommendation</h2>
+					<h2 class="c-heading c-heading--md">@Model.Value("homeAboutCompanyDetailsTitle")</h2>
 					<p class="c-text">
-						We have a loyal team of long-standing staff – our manager has been with us for more than 15 years – which enables us to deliver excellence and continuity of service. We value our reputation and use monitoring and training to ensure all our employees carry out work with care and professionalism.
+						@Model.Value("homeAboutCompanyDetailsDescription")
 					</p>
 					<a href="" class="c-button c-button--white c-button--text-large btn">
 						Read more <i class="fa-solid fa-arrow-right-long"></i>
