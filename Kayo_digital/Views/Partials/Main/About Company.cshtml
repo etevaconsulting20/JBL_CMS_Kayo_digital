@@ -1,4 +1,7 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@*@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;*@
+
+
 <section class="l-section l-section--large-padding-top b-intro-block">
 	<div class="container">
 		<div class="row">
@@ -9,7 +12,7 @@
 						@Model.Value("homeAboutCompanyDetailsDescription")
 					</p>
 					<a href="" class="c-button c-button--white c-button--text-large btn">
-						Read more <i class="fa-solid fa-arrow-right-long"></i>
+						@Model.Value("homeAboutCompanyDetailsCTA") <i class="fa-solid fa-arrow-right-long"></i>
 					</a>
 				</div>
 			</div>
@@ -22,15 +25,16 @@
 								<div class="c-intro-card__image-wrapper" style="background-image:url(assets/images/intro-card.jpg)">
 								
 									<div class="c-intro-card__label">
-										<p>Case studies</p>
+										<p>@Model.Value("homeAboutCompanyCaseStudiesCardIconText")</p>
 									</div>
 								</div>
 								<div class="c-intro-card__content-wrapper">
 	                             
-									<h5 class="c-heading c-heading--sm-2">We have work examples across 8 sectors that we’re proud of</h5>
+									<h5 class="c-heading c-heading--sm-2">@Model.Value("homeaboutCompanyCaseStudiesCardHeadline")</h5>
 									<a href="" class="c-button c-button--white c-button--text-large btn">
-										See case studies <i class="fa-solid fa-arrow-right-long"></i>
+										@Model.Value("homeAboutCompanyCaseStudiesCardCTA") <i class="fa-solid fa-arrow-right-long"></i>
 									</a>
+									
 								</div>
 							</div>
 						</div>
@@ -38,16 +42,44 @@
 							<div class="c-intro-card c-intro-card--offset-top">
 								<div class="c-intro-card__image-wrapper" style="background-image:url(assets/images/intro-card.jpg)">
 									<div class="c-intro-card__label">
-										<p>Sectors</p>
+										<p>@Model.Value("homeAboutCompanySectorsCardIconText")</p>
 									</div>
 
 								</div>
 								<div class="c-intro-card__content-wrapper">
-									<h5 class="c-heading c-heading--sm-2">10 years experience in the sectors we operate in...</h5>
+									<h5 class="c-heading c-heading--sm-2">@Model.Value("homeAboutCompanySectorsCardHeadline")</h5>
 									<a href="" class="c-button c-button--white c-button--text-large btn">
-										See sectors <i class="fa-solid fa-arrow-right-long"></i>
+										@Model.Value("homeAboutCompanySectorsCardCTA") <i class="fa-solid fa-arrow-right-long"></i>
 									</a>
 								</div>
+								
+								<div class="col-md-8">
+								    	@*<p><img src="@(@Model.Value("imageCropper"))" /></p>*@
+								        
+								        @*@{
+                                           var selection = Umbraco.Content(Guid.Parse("0caf96b6-8fca-4825-b6a7-ba80bd6489ab"))
+                                             .ChildrenOfType("product")
+                                             .Where(x => x.IsVisible());
+                                            }
+                                            <ul>
+                                             @foreach (var item in selection)
+                                             {
+                                             var typedMediaPickerSingle = item.Value<IPublishedContent>("prouctContentImage");
+                                                 if (typedMediaPickerSingle != null)
+                                                 {
+                                            <li>
+                                                         
+                                            <img src="@typedMediaPickerSingle.Url()" />
+                                            </li>
+                                                 }
+                                            
+                                             }
+                                            </ul>
+								    	*@
+								    	
+								</div>
+								
+								
 							</div>
 						</div>
 					</div>
