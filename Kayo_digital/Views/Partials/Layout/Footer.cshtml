@@ -95,7 +95,7 @@
 							</p>
 							<p class="b-footer__contact c-text c-text--small">
 								<i class="fa-solid fa-phone"></i>
-						       @Model.Value("contactNo")
+						       @Model.Value("contactNo", fallback: Fallback.ToAncestors)
 							</p>
 							<p class="b-footer__contact c-text c-text--small">
 								<i class="fa-regular fa-envelope"></i>
