@@ -78,10 +78,17 @@
 <footer class="l-section l-section--white l-section--padding-bot b-footer">
 	<div class="container">
 		<div class="row">
+		
 			<div class="col-12 col-lg-4">
-			    <!--JblLogo-->
-			    @await Umbraco.RenderMacroAsync("FooterJBLLogo", new {footerJblLogo="1056"})
-			</div>
+                <div class="b-footer__company-block">
+                    <a href="/">
+                    <img class="b-footer__logo" src="assets/logos/jbl-logo.svg" alt="" />
+                    </a>
+                    <p class="c-text c-text--small c-text--bold d-none d-lg-block">@Model.Value("footerMainColumnOneCompanyName", fallback: Fallback.ToAncestors)</p>
+                    <p class="b-footer__text c-text d-none d-lg-block">@Model.Value("footerMainColumnOneRegistrationDetail")</p>
+                    <p class="b-footer__text c-text b-footer__text--last d-none d-lg-block">@Model.Value("footerMainColumnOneRights")</p>
+                </div>
+</div>
 			<div class="col-12 col-lg-8">
 				<div class="b-footer__columns">
 					<div class="row">
@@ -95,7 +102,7 @@
 							</p>
 							<p class="b-footer__contact c-text c-text--small">
 								<i class="fa-solid fa-phone"></i>
-						       @Model.Value("contactNo", fallback: Fallback.ToAncestors)
+						       @Model.Value("contactNo")
 							</p>
 							<p class="b-footer__contact c-text c-text--small">
 								<i class="fa-regular fa-envelope"></i>
@@ -122,21 +129,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-lg-4 d-lg-none">
-				<div class="b-footer__company-block">
-					<p class="c-heading c-heading--xs-2">
-						JB Landscape - Grounds Maintenance & Landscaping
-						Specialists
-					</p>
-					<!--Duplicate of the above copywrite in the first column as it needs to move to the bottom of the page on mobile -->
-					<p class="b-footer__text c-text b-footer__text--last">
-						© Copyright 2022 J.B.Landscape and
-						Property Maintenance. All Rights Reserved.
-						
-					</p>
-					<!--Duplicate of the above copywrite in the first column as it needs to move to the bottom of the page on mobile -->
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </footer>
