@@ -85,8 +85,8 @@
                     <img class="b-footer__logo" src="assets/logos/jbl-logo.svg" alt="" />
                     </a>
                     <p class="c-text c-text--small c-text--bold d-none d-lg-block">@Model.Value("footerMainColumnOneCompanyName", fallback: Fallback.ToAncestors)</p>
-                    <p class="b-footer__text c-text d-none d-lg-block">@Model.Value("footerMainColumnOneRegistrationDetail")</p>
-                    <p class="b-footer__text c-text b-footer__text--last d-none d-lg-block">@Model.Value("footerMainColumnOneRights")</p>
+                    <p class="b-footer__text c-text d-none d-lg-block">@Model.Value("footerMainColumnOneRegistrationDetail", fallback: Fallback.ToAncestors)</p>
+                    <p class="b-footer__text c-text b-footer__text--last d-none d-lg-block">@Model.Value("footerMainColumnOneRights", fallback: Fallback.ToAncestors)</p>
                 </div>
 </div>
 			<div class="col-12 col-lg-8">
@@ -95,23 +95,23 @@
 					
 					 <!--Contact-->
                         <div class="b-footer__column col-12 col-lg-4">
-							<h5 class="b-footer__heading c-heading c-heading--xs-2 d-none d-lg-block"><a href="#">@Model.Value("contactTitle")</a></h5>
+							<h5 class="b-footer__heading c-heading c-heading--xs-2 d-none d-lg-block"><a href="#">@Model.Value("contactTitle", fallback: Fallback.ToAncestors)</a></h5>
 							<p class="c-text c-text--small">
-						@Model.Value("contactAddress")
+						@Model.Value("contactAddress", fallback: Fallback.ToAncestors)
 							  
 							</p>
 							<p class="b-footer__contact c-text c-text--small">
 								<i class="fa-solid fa-phone"></i>
-						       @Model.Value("contactNo")
+						      @Model.Value("contactNo", fallback: Fallback.ToAncestors)
 							</p>
 							<p class="b-footer__contact c-text c-text--small">
 								<i class="fa-regular fa-envelope"></i>
-								<a href="mailto:info@jblandscape.co.uk">@Model.Value("contactEmail")</a>
+								<a href="mailto:info@jblandscape.co.uk">@Model.Value("contactEmail", fallback: Fallback.ToAncestors)</a>
 							</p>
 						</div>
 						<!--WebSite-->
 						<div class="b-footer__column b-footer__column--half col-6 col-lg-4">
-							<h5 class="b-footer__heading c-heading c-heading--xs-2"><a href="#">@Model.Value("webSiteTitle")</a></h5>
+							<h5 class="b-footer__heading c-heading c-heading--xs-2"><a href="#">@Model.Value("webSiteTitle", fallback: Fallback.ToAncestors)</a></h5>
 							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
 							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
 							<a href="" class="b-footer__column-link c-text c-text--small">Environmental Policy</a>
