@@ -2,7 +2,52 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutUs>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "Jbl_Master_Main.cshtml";
+	Layout = "Master.cshtml";
+     @*var heroImageUrl = ((IPublishedContent)Model.Value("heroImage")).Url();*@
+     var aboutImageUrlFirst = ((IPublishedContent)Model.Value("subPagesCardFirstImage")).Url();
+     var aboutImageUrlSecond = ((IPublishedContent)Model.Value("subPagesCardSecondImage")).Url();
+     var aboutImageUrlThird = ((IPublishedContent)Model.Value("subPagesCardThirdImage")).Url();
 	
 }
-*@
+@await Html.PartialAsync("Common Partial Views/Hero")
+<!--sart Card view-->
+ <section class="l-section l-section--pull-top-small b-card-column">
+		    <div class="container b-card-column__content-container"> 
+		    	<div class="row">
+		    		<div class="col-12 col-lg-4">	
+		    			<div class="c-services-card">
+		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url(@aboutImageUrlFirst)">
+
+		    				</div>
+		    				<div class="c-services-card__content-wrapper">
+		    					<h4 class="c-heading c-heading--sm">Commercial Landscaping</h4>
+		    					<a href="">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+		    				</div>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-lg-4">	
+		    			<div class="c-services-card">
+		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url(@aboutImageUrlSecond)">
+
+		    				</div>
+		    				<div class="c-services-card__content-wrapper">
+		    					<h4 class="c-heading c-heading--sm">Commercial Landscaping</h4>
+		    					<a href="">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+		    				</div>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-lg-4">	
+		    			<div class="c-services-card">
+		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url(@aboutImageUrlThird)">
+
+		    				</div>
+		    				<div class="c-services-card__content-wrapper">
+		    					<h4 class="c-heading c-heading--sm">Commercial Landscaping</h4>
+		    					<a href="">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</div>
+			</div>		  	
+		  </section>
+    <!--End Card view-->
