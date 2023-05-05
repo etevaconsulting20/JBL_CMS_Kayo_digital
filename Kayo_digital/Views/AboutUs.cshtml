@@ -3,10 +3,10 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
-     @*var heroImageUrl = ((IPublishedContent)Model.Value("heroImage")).Url();*@
+     @*var heroImageUrl = ((IPublishedContent)Model.Value("heroImage")).Url();
      var aboutImageUrlFirst = ((IPublishedContent)Model.Value("subPagesCardFirstImage")).Url();
      var aboutImageUrlSecond = ((IPublishedContent)Model.Value("subPagesCardSecondImage")).Url();
-     var aboutImageUrlThird = ((IPublishedContent)Model.Value("subPagesCardThirdImage")).Url();
+	var aboutImageUrlThird = ((IPublishedContent)Model.Value("subPagesCardThirdImage")).Url(); *@
 	
 }
 @await Html.PartialAsync("Common Partial Views/Hero")
@@ -16,7 +16,7 @@
 		    	<div class="row">
 		    		<div class="col-12 col-lg-4">	
 		    			<div class="c-services-card">
-		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url(@aboutImageUrlFirst)">
+		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url()">
 
 		    				</div>
 		    				<div class="c-services-card__content-wrapper">
