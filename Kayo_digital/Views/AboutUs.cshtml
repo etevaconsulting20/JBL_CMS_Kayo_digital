@@ -27,7 +27,7 @@
 		    		</div>
 		    		<div class="col-12 col-lg-4">	
 		    			<div class="c-services-card">
-		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url(@aboutImageUrlSecond)">
+		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url()">
 
 		    				</div>
 		    				<div class="c-services-card__content-wrapper">
@@ -38,7 +38,7 @@
 		    		</div>
 		    		<div class="col-12 col-lg-4">	
 		    			<div class="c-services-card">
-		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url(@aboutImageUrlThird)">
+		    				<div class="c-services-card__image-wrapper c-services-card__image-wrapper--small" style="background-image:url()">
 
 		    				</div>
 		    				<div class="c-services-card__content-wrapper">
@@ -53,6 +53,69 @@
 		  <div>
 		      @await Html.PartialAsync("Common Partial Views/Our Services Common")
 		  </div>
+		  
+		  <section class="l-section b-text-w-image b-text-w-image--image-right b-text-w-image--grey-image-background">
+		    <div class="container"> 
+		    	<div class="row">
+		    		<div class="col-12 col-md-6">	
+		    			<div class="b-text-w-image__text-wrapper b-text-w-image__text-wrapper--left">
+		    				<h2 class="c-heading c-heading--md">@Model.Value("singleCardTitle")</h2>
+		    				<p class="c-text">
+								@Model.Value("singleCardDescription")
+		    				</p>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-md-6">
+			    		<div class="b-text-w-image__image-wrapper">
+			    			<img src="https://via.placeholder.com/600x350" alt="" />
+			    		</div>
+		    		</div>
+		    	</div>
+			</div>		  	
+		  </section>
+		  
+		  @await Html.PartialAsync("Common Partial Views/Service Feature")
+		  
+		   <section class="l-section b-text-w-image">
+		    <div class="container"> 
+		    	<div class="row">
+		    		<div class="col-12 col-md-6">
+			    		<div class="b-text-w-image__image-wrapper">
+			    			<img src="https://via.placeholder.com/600x350" alt="" />
+			    		</div>
+		    		</div>
+		    		<div class="col-12 col-md-6">	
+		    			<div class="b-text-w-image__text-wrapper b-text-w-image__text-wrapper--right">
+		    				<h2 class="c-heading c-heading--md">@Model.Value("ourFirstCardTitle")</h2>
+		    				<p class="c-text">
+								@Model.Value("ourFirstCardDescription")
+		    				</p>
+		    			</div>
+		    		</div>
+		    	</div>
+			</div>		  	
+		  </section>
+
+		  <section class="l-section b-text-w-image b-text-w-image--image-right">
+		    <div class="container"> 
+		    	<div class="row">
+		    		<div class="col-12 col-md-6">	
+		    			<div class="b-text-w-image__text-wrapper b-text-w-image__text-wrapper--left">
+		    				<h2 class="c-heading c-heading--md">@Model.Value("ourSecondCardTitle")</h2>
+		    				<p class="c-text">
+								@Model.Value("ourSecondCardDescription")
+		    				</p>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-md-6">
+			    		<div class="b-text-w-image__image-wrapper">
+			    			<img src="https://via.placeholder.com/600x350" alt="" />
+			    		</div>
+		    		</div>
+		    	</div>
+			</div>		  	
+		  </section>
+		  
     <!--End Card view-->
     
     <div>
