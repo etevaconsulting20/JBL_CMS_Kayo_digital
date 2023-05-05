@@ -56,9 +56,9 @@
 		    	<div class="row">
 		    		<div class="col-12 col-md-6">	
 		    			<div class="b-text-w-image__text-wrapper b-text-w-image__text-wrapper--left">
-		    				<h2 class="c-heading c-heading--md">@Model.Value("aboutCompanyTitle")</h2>
+		    				<h2 class="c-heading c-heading--md">@Model.Value("singleCardTitle")</h2>
 		    				<p class="c-text">
-								@Model.Value("aboutUsTitleDescription")
+								@Model.Value("singleCardDescription")
 		    				</p>
 		    			</div>
 		    		</div>
@@ -71,57 +71,7 @@
 			</div>		  	
 		  </section>
 		  
-		   <section class="l-section b-icon-text-block">
-		    <div class="container b-icon-text-block__content-container"> 
-		    	<div class="row">
-		    		<div class="col-6 col-md-3">	
-		    			<div class="c-icon-text-card">
-		    				<div class="c-icon-text-card__image-wrapper">
-		    					<i class="fa-solid fa-leaf"></i>
-		    				</div>
-		    				<div class="c-icon-text-card__content-wrapper">
-		    					<h4 class="c-heading c-heading--sm-2">@Model.Value("serviceFeaturesFirstCardTitle")</h4>
-		    					<p class="c-text c-text--small d-none d-md-block">@Model.Value("serviceFeaturesFirstCardDescription")</p>
-		    				</div>
-		    			</div>
-		    		</div>
-		    		<div class="col-6 col-md-3">	
-		    			<div class="c-icon-text-card">
-		    				<div class="c-icon-text-card__image-wrapper">
-		    					<i class="fa-solid fa-leaf"></i>
-		    				</div>
-		    				<div class="c-icon-text-card__content-wrapper">
-		    					<h4 class="c-heading c-heading--sm-2">@Model.Value("serviceFeaturesSecondCardTitle")</h4>
-		    					<p class="c-text c-text--small d-none d-md-block">@Model.Value("serviceFeaturesSecondCardDescription")</p>
-		    				</div>
-		    			</div>
-		    		</div>
-		    		<div class="col-6 col-md-3">	
-		    			<div class="c-icon-text-card">
-		    				<div class="c-icon-text-card__image-wrapper">
-		    					<i class="fa-solid fa-leaf"></i>
-		    				</div>
-		    				<div class="c-icon-text-card__content-wrapper">
-		    					<h4 class="c-heading c-heading--sm-2">@Model.Value("serviceFeaturesThirdCardTitle")</h4>
-		    					<p class="c-text c-text--small d-none d-md-block">@Model.Value("serviceFeaturesThirdCardDescription")</p>
-		    				</div>
-		    			</div>
-		    		</div>
-		    		<div class="col-6 col-md-3">	
-		    			<div class="c-icon-text-card">
-		    				<div class="c-icon-text-card__image-wrapper">
-		    					<i class="fa-solid fa-leaf"></i>
-		    				</div>
-		    				<div class="c-icon-text-card__content-wrapper">
-		    					<h4 class="c-heading c-heading--sm-2">@Model.Value("serviceFeaturesFourthCardTitle")</h4>
-		    					<p class="c-text c-text--small d-none d-md-block">@Model.Value("serviceFeaturesFourthCardDescription")</p>
-		    				</div>
-		    			</div>
-		    		</div>
-
-		    	</div>
-			</div>		  	
-		  </section>
+		  @await Html.PartialAsync("Common Partial Views/Service Feature")
 		  
 		   <section class="l-section b-text-w-image">
 		    <div class="container"> 
