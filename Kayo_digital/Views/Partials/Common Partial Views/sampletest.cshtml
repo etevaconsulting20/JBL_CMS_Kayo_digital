@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+@{
+	var selection = Umbraco.Content(Guid.Parse("0c272ee3-971a-4ccd-9874-15db9c29a920"))
+    .ChildrenOfType("servicesList")
+    .Where(x => x.IsVisible());
+}
+<ul>
+	@foreach (var item in selection)
+	{
+		<li>
+			<a href="@item.Url()">@item.Name()</a>
+		</li>
+	}
+</ul>
+
+
+

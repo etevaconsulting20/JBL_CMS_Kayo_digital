@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+<!--Image Section-->
+<section class="l-section b-footer-banner b-footer-banner--text-right"
+		 style="background-image:url(/assets/images/footer-banner-background.jpg)">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="b-footer-banner__content">
+					<h4 class="c-heading c-heading--lg-2 c-heading--white">@Model.Value("footerLock")</h4>
+					<div class="b-footer-banner__columns">
+						<div class="row">
+							<div class="col-12 col-lg-5">
+								<h5 class="c-heading c-heading--xs c-heading--white">@Model.Value("workingForJBL")</h5>
+								<p class="c-text c-text--xs c-text--white">
+									@Model.Value("workingForJBLDiscription")
+								</p>
+							</div>
+							<div class="col-12 col-lg-5">
+								<h5 class="c-heading c-heading--xs c-heading--white">@Model.Value("ourMissionTogether")</h5>
+								<p class="c-text c-text--xs c-text--white">
+									@Model.Value("ourMissionTogetherDiscription")
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="b-footer-banner__apply-wrapper">
+						<a href="" class="c-button c-button--outline-primary c-button--text-medium btn">
+							Apply today <i class="fa-solid fa-arrow-right-long"></i>
+						</a>
+						<p class="c-text c-text--xs c-text--white">
+							<i class="fa-solid fa-check"></i> @Model.Value("currently3OpenRoles")
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -6,9 +6,21 @@
 }
 
     
-    @await Html.PartialAsync("Common Partial Views/Hero")
+  @await Html.PartialAsync("Common Partial Views/Hero")
+  
+  <!-- Start Our Services Section-->
+     <section class="l-section l-section--pull-top-large b-services-block">
+		<div class="container b-services-block__content-container b-services-block__content-container--logo">
+         @await Html.PartialAsync("Common Partial Views/Our Services Common")
+		</div>
+	</section>
+	 <!-- End Our Services Section-->
+  
     
-  @await Html.PartialAsync("Common Partial Views/Our Services Common")
-    
+  
+
+
+
+
       @await Html.PartialAsync("Main/About Company")
     

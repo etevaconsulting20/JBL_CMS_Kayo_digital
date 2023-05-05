@@ -1,0 +1,72 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@*@{
+       var selection = Umbraco.Content(Guid.Parse("34c62917-6a02-4af4-8b32-cc5b74993bb3"))
+       .ChildrenOfType("accreditationItem")
+       .Where(x => x.IsVisible());
+}
+<ul>
+      @foreach (var item in selection)
+      {
+        var typedMediaPickerSingle = item.Value<IPublishedContent>("image");
+
+       <li>
+          <img src="@typedMediaPickerSingle.Url()"/>
+       </li>
+      }
+      			<a href="@item.Url()">@item.Name()</a>
+</ul>*@
+
+
+@{
+	var selection = Umbraco.Content(Guid.Parse("0caf96b6-8fca-4825-b6a7-ba80bd6489ab"))
+    .ChildrenOfType("product")
+    .Where(x => x.IsVisible());
+}
+<div class="d-flex justify-content-center" style="height:70px">
+	@foreach (var item in selection)
+	{
+	 var typedMediaPickerSingle = item.Value<IPublishedContent>("prouctContentImage");
+	
+			      <img class="m-2 ms-5"  src="@typedMediaPickerSingle.Url()"/>
+		   	}
+</div>
+
+
+
+<!--Footer Accridatation logos -->
+
+<!--<section class="l-section b-footer-logos l-section--no-padding">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+<!--			<div class="col-12">-->
+<!--				<div class="b-footer-quote__content">-->
+					<!--<img src="assets/logos/footer-icon.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon-2.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon-2.png" alt="" />-->
+					<!--<img src="assets/logos/footer-icon.png" alt="" />-->
+				@*@{
+                   var heroImageUrl = ((IPublishedContent)Model.Value("footer5Logos")).Url();
+
+                 }
+             @heroImageUrl*@
+                    
+          
+<!--                <div>-->
+                
+                    
+<!--                </div>-->
+<!--                <div>-->
+                  
+                      
+<!--                </div>-->
+
+
+
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</section>-->
