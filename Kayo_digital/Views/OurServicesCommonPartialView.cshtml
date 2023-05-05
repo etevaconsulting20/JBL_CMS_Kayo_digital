@@ -1,34 +1,11 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-   //var ourServicesImageUrl = ((IPublishedContent)Model.Value("heroImage")).Url();
-   //var ourServicesImageUrlFirst = ((IPublishedContent)Model.Value("subPagesCardFirstImage")).Url();
-   //var ourServicesImageUrlSecond = ((IPublishedContent)Model.Value("subPagesCardSecondImage")).Url();
-   //var ourServicestImageUrlThird = ((IPublishedContent)Model.Value("subPagesCardThirdImage")).Url();
-  // var abc=((IPublishedContent)Model.Value("ourServicesCardGroupTitle"));
-  
+	Layout = null;
 }
-@{
-   // var pageName = ((IPublishedContent)Model.Value("ourServicesCardGroupTitle"));
-    //var childPages = Model.Content.Children;
-//<h1>@pageName</h1>
-}
-@{
-    //var cardGroupTitleId = @Model.Value<string>("ourServicesCardGroupTitle", fallback: Fallback.ToAncestors);
-    //var things = Model.GetPropertyValue<IPublishedContent>(ourServicesCommonPartialView);
-    //var cardGroupTitle = Umbraco.Content(cardGroupTitleId) as IPublishedContent;
-
-
-
-    //var title = @Model.Value("ourServicesCardGroupTitle");
-    var title = (string)Model.Value("ourServicesCardGroupTitle");
-
-}
-
-@Model.Value("ourServicesCardGroupTitle")
-			<div class="row">
+	<div class="row">
 				<div class="col-12 b-services-block__heading-container">
-					<h2 class="c-heading c-heading--md c-heading--white">@Model.Value("ourServicesCardGroupTitle", fallback: Fallback.ToAncestors)</h2>
+					<h2 class="c-heading c-heading--md c-heading--white">@Model.Value("ourServicesCardGroupTitle")</h2>
 				</div>
 				<div class="col-6 col-lg-3">
 					<div class="c-services-card">
@@ -38,7 +15,7 @@
 						</div>
 						<div class="c-services-card__content-wrapper">
 							<h4 class="c-heading c-heading--sm">Commercial Landscaping</h4>
-							<a href="">@Model.Value("ourServicesCardCTA")<i class="fa-solid fa-arrow-right-long"></i></a>
+							<a href="">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
 						</div>
 					</div>
 				</div>
