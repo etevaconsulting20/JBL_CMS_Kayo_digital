@@ -1,0 +1,101 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.CaseStudyList>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+    <section class="l-section l-section--no-padding l-section--white b-inner-hero-banner" >
+		    <div class="container"> 
+		    	<div class="row">
+		    		<div class="col-12 col-lg-6">	
+		    			<div class="b-inner-hero-banner__text-wrapper">
+		    				<p class="c-heading c-heading heading__xs c-heading--primary">@Model.Value("singleCardTitle")</p>
+		    				<h1 class="c-heading c-heading--page-heading">@Model.Value("singleCardDescription")</h1>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-lg-6">
+
+		    		</div>
+		    	</div>
+			</div>		  	
+     </section>
+     
+     <section class="l-section l-section--no-padding b-project-banner">
+		    <div class="container"> 
+		    	<div class="row">
+		    		<div class="col-12">
+		    			<div class="b-project-banner__content-wrapper">
+			    			<div class="b-project-banner__image" style="background-image:url(assets/images/project-banner-background.jpg)">
+			    			</div>
+			    			<div class="b-project-banner__content">
+			    				<div class="b-project-banner__content-heading">
+				    				<p class="c-text c-text--small c-text--bold">@Model.Value("projectCardHeading")</p>
+				    				<img src="assets/logos/project-logo.png" alt="" />
+				    			</div>
+				    			<div class="b-project-banner__content-body">
+				    				<h2 class="c-heading c-heading--project c-heading--bold">@Model.Value("projectCardTitle")</h2>
+				    				<p class="c-text">@Model.Value("projectTitleDescription")</p>
+				    				<a href="/featured-project-cta/">@Model.Value("projectCardCTA")<i class="fa-solid fa-arrow-right-long"></i></a>
+				    			</div>
+			    			</div>
+			    		</div>
+		    		</div>	
+		    	</div>
+		    </div>		  	
+		  </section>
+		  
+		  
+		  
+		  
+
+@{
+    var selection = Umbraco.Content(Guid.Parse("c908d6e8-d642-4291-b8a5-19704a415963"))
+    .Children("")
+    .Where(x => x.IsVisible());
+ }
+
+
+<section class="l-section l-section--no-padding b-latest-news ">
+    
+    
+    
+		    <div class="container b-latest-news__content-container"> 
+		    
+		        
+		    	<div class="row">
+		    	    
+		    	    @foreach (var item in selection)
+	                {
+	                <!--List image typecasting-->
+	                var caseStudyImage = ((IPublishedContent)item.Value("caseStudyImage")).Url();  
+	                
+		    		<div class="col-12 col-lg-4">	
+		    			<div class="c-latest-news-card">
+		    				<div class="c-latest-news-card__image-wrapper c-latest-news-card__image-wrapper--small" style="background-image:url(@caseStudyImage)">
+
+		    				</div>
+		    				<div class="c-latest-news-card__content-wrapper">
+		    				    
+		    					<h4 class="c-heading c-heading--md-2">@item.Value("caseStudyTitle")</h4>
+		    					<p class="c-text">@item.Value("caseStudyDescription")</p>
+		    					<a href=""> @item.Value("caseStudyCTA") <i class="fa-solid fa-arrow-right-long"></i></a>
+		    				</div>
+		    			</div>
+		    		</div>
+                    }
+
+                    <div class="col-12 b-latest-news__load-more">
+				          <a href="" class="c-button c-button--white c-button--text-medium btn">Load more</a>
+		    		</div>
+		    	</div>
+			</div>		  	
+		  </section>
+		  
+		  
+
+		  
+		  
+
+
+

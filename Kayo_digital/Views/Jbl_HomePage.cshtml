@@ -2,15 +2,58 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
- Layout = "Master.cshtml";
+Layout = "Master.cshtml";
 }
 
 
 
 
  @await Html.PartialAsync("Common Partial Views/Hero")
- 
- 
 
- @await Html.PartialAsync("Main/About Company")
-                        
+<!-- Start Our Services Section-->
+<section class="l-section l-section--pull-top-large b-services-block">
+<div class="container b-services-block__content-container b-services-block__content-container--logo">
+ @await Html.PartialAsync("Common Partial Views/Our Services Common")
+</div>
+</section>
+<!-- End Our Services Section-->
+
+
+
+@await Html.PartialAsync("Main/About Company")
+
+
+
+@{
+	var selection = Umbraco.Content(Guid.Parse("2958a084-79a1-412d-8be9-48ea958fb5d1"))
+    .Children()
+    .Where(x => x.IsVisible());
+}
+
+
+
+
+<section class="l-section l-section--pull-top-small b-icon-text-block">
+		    <div class="container b-icon-text-block__content-container"> 
+		    	<div class="row">
+		    	    
+		    	    @foreach (var item in selection)
+	                {
+		    	    
+		    		<div class="col-6 col-md-3">	
+		    			<div class="c-icon-text-card">
+		    				<div class="c-icon-text-card__image-wrapper">
+		    					<i class="fa-solid fa-leaf"></i>
+		    				</div>
+		    				<div class="c-icon-text-card__content-wrapper">
+		    					<h4 class="c-heading c-heading--sm-2">@item.Value("serviceFeaturesCardTitle")</h4>
+		    					<p class="c-text c-text--small d-none d-md-block">@item.Value("serviceFeaturesCardDescription")</p>
+		    				</div>
+		    			</div>
+		    		</div>
+		    		
+		    		}
+		    		
+		    	</div>
+		    </div>
+</section>		    

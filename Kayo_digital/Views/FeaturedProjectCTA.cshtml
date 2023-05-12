@@ -1,0 +1,84 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.FeaturedProjectCta>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<h1>Hello</h1>
+
+<section class="l-section l-section--no-padding l-section--white b-inner-hero-banner" >
+		    <div class="container"> 
+		    	<div class="row">
+		    		<div class="col-12 col-lg-6">	
+		    			<div class="b-inner-hero-banner__text-wrapper">
+		    				<p class="c-heading c-heading heading__xs c-heading--primary">@Model.Value("singleCardTitle")</p>
+		    				<h1 class="c-heading c-heading--page-heading">@Model.Value("singleCardDescription")</h1>
+		    			</div>
+		    		</div>
+		    		<div class="col-12 col-lg-6">
+		    			<div class="b-inner-hero-banner__logo-wrapper">
+			    			<img src="assets/logos/project-logo.png" alt="" />
+			    		</div>
+		    		</div>
+		    	</div>
+			</div>		  	
+		  </section>
+
+		  <section class="l-section l-section--no-padding b-project-banner">
+		    <div class="container"> 
+		    	<div class="row">
+		    		<div class="col-12">
+		    			<div class="b-project-banner__content-wrapper">
+			    			<div class="b-project-banner__image" style="background-image:url(assets/images/project-banner-background.jpg)">
+			    			</div>
+			    		</div>
+		    		</div>	
+		    	</div>
+		    </div>		  	
+		  </section>
+
+		  <div class="l-two-column l-two-column">
+		  	<div class="container">
+		  		<div class="row">
+		  			<div class="col-12 col-lg-8">
+		  				<div class="l-two-column__content-wrapper">
+		    				<h2 class="c-heading c-heading--md">@Model.Value("firstTitle")</h2>
+		    				<p class="c-text">@Model.Value("firstDescription")</p>	
+
+		    				<h2 class="c-heading c-heading--md">@Model.Value("secondTitle")</h2>
+		    				<p class="c-text">@Model.Value("secondDescription")</p>	
+		    					 
+	    				</div> 				
+		  			</div>
+		  			<div class="col-12 col-lg-4">
+						<div class="c-details-card">
+							<div class="c-details-card__content">
+								<h5 class="c-heading c-heading--xs">Title</h5>
+								<div class="c-details-card__service">
+									<p class="c-text c-text--bold c-details-card__heading">Service heading</p>
+									<p class="c-text c-details-card__detail">Service detail</p>
+								</div>
+								<div class="c-details-card__service">
+									<p class="c-text c-text--bold c-details-card__heading">Service heading</p>
+									<p class="c-text c-details-card__detail">Service detail</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="c-details-card">
+							<div class="c-details-card__content">
+								<h5 class="c-heading c-heading--xs">Title</h5>
+								<ul class="c-details-card__list">
+									<li>List item</li>
+									<li>List item</li>
+									<li>List item</li>
+									<li>List item</li>
+									<li>List item</li>
+								</ul>
+							</div>
+						</div>
+		  			</div>
+		  		</div>
+		  	</div>	
+		  </div>

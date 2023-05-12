@@ -1,9 +1,9 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-   //var heroImageUrl = ((IPublishedContent)Model.Value("heroImage")).Url();
+   var heroImageUrl = ((IPublishedContent)Model.Value("heroImage")).Url();
 
 }
-<section class="l-section b-hero-banner b-hero-banner--text-left b-hero-banner--large-padding-bottom" style="background-image:url()">
+<section class="l-section b-hero-banner b-hero-banner--text-left b-hero-banner--large-padding-bottom" style="background-image:url(@heroImageUrl)">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
