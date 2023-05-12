@@ -67,9 +67,12 @@
 		    	    
 		    	    @foreach (var item in selection)
 	                {
+	                <!--List image typecasting-->
+	                var caseStudyImage = ((IPublishedContent)item.Value("caseStudyImage")).Url();  
+	                
 		    		<div class="col-12 col-lg-4">	
 		    			<div class="c-latest-news-card">
-		    				<div class="c-latest-news-card__image-wrapper c-latest-news-card__image-wrapper--small" style="background-image:url(assets/images/latest-news-image.png)">
+		    				<div class="c-latest-news-card__image-wrapper c-latest-news-card__image-wrapper--small" style="background-image:url(@caseStudyImage)">
 
 		    				</div>
 		    				<div class="c-latest-news-card__content-wrapper">
